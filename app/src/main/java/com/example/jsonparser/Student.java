@@ -1,11 +1,20 @@
+
 package com.example.jsonparser;
 
-/**
- * Created by admin on 8/2/2016.
- */
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+
 public class Student {
 
-    String name;
-    int age;
-    Double grade;
+    @SerializedName("name")
+    @Expose
+    public String name;
+    @SerializedName("age")
+    @Expose
+    public Integer age;
+    @SerializedName("grade")
+    @Expose
+    public Double grade;
+
 }

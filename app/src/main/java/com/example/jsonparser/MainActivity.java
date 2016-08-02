@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivityTAG_";
 
     private String jsonString = "[{\"name\":\"Juan\",\"age\":20,\"grade\":8.1},{\"name\":\"Miguel\",\"age\":23,\"grade\":8.3},{\"name\":\"Roberto\",\"age\":39,\"grade\":9.3},{\"name\":\"Luis\",\"age\":19,\"grade\":6.9},{\"name\":\"Gaudencio\",\"age\":25,\"grade\":4.3}]";
-    private String jsonString2 = "{\"students\":[{\"name\":\"Juan\",\"age\":20,\"grade\":8.1},{\"name\":\"Miguel\",\"age\":23,\"grade\":8.3},{\"name\":\"Roberto\",\"age\":39,\"grade\":9.3},{\"name\":\"Luis\",\"age\":19,\"grade\":6.9},{\"name\":\"Gaudencio\",\"age\":25,\"grade\":4.3},]}";
+    private String jsonString2 = "{\"students\":[{\"name\":\"Juan\",\"age\":20,\"grade\":8.1},{\"name\":\"Miguel\",\"age\":23,\"grade\":8.3},{\"name\":\"Roberto\",\"age\":39,\"grade\":9.3},{\"name\":\"Luis\",\"age\":19,\"grade\":6.9},{\"name\":\"Gaudencio\",\"age\":25,\"grade\":4.3}]}";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +86,20 @@ public class MainActivity extends AppCompatActivity {
 
         for (Student student : students) {
             Log.d(TAG, "doMagic3: "
+                    + student.name + " "
+                    + student.age + " "
+                    + student.grade);
+        }
+    }
+
+    public void doMagic4(View view) {
+
+        Gson gson = new GsonBuilder().create();
+        Result result = gson.fromJson(jsonString2, Result.class);
+
+        for (Student student : result.students) {
+
+            Log.d(TAG, "doMagic4: "
                     + student.name + " "
                     + student.age + " "
                     + student.grade);
