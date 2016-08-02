@@ -33,8 +33,11 @@ public class MainActivity extends AppCompatActivity {
                 JSONObject jsonObject = new JSONObject(jsonArray.get(i).toString());
 
                 String name =  jsonObject.getString("name");
+                String age =  jsonObject.getString("age");
 
-                Log.d(TAG, "doMagic: " + i + " " + name);
+                String grade = jsonObject.getString("grade");
+
+                Log.d(TAG, "doMagic: " + i + " " + name +" "+ grade +" "+ age);
 
             }
         } catch (JSONException e) {
